@@ -33,9 +33,9 @@ df.drop_duplicates()
 df["Attendance"] = df["Attendance"].fillna(df["Attendance"].mean())
 df["StudyHours"] = df["StudyHours"].fillna(df["StudyHours"].mean())
 df["Marks"] = df["Marks"].fillna(df["Marks"].mean())
-df["Name"] = df["Name"].fillna("Unknown")
+df["Name"] = df["Name"].fillna("Unknown") #fillna is method of pandas that let u fill missing values
 
-# Remove invalid entries (Blank Names)
+# Remove invalid entries (Blank Names) makes sure that data is relevant
 df = df[df["Name"].str.strip() != ""]
 
 # Validate Attendance (0 to 100)
@@ -52,3 +52,35 @@ df.to_csv("cleaned_data.csv", index=False)
 
 print("\nData cleaning completed successfully.")
 print("Cleaned dataset saved as 'cleaned_data.csv'")
+
+# Module 4 : Data Transformation
+
+
+print("\n  DATA TRANSFORMATION = ")
+
+# Create Grade column
+def grade(marks):
+    if marks >= 90:
+        return "A"
+    elif marks >= 75:
+        return "B"
+    elif marks >= 60:
+        return "C"
+    elif marks >= 40:
+        return "D"
+    else:
+        return "F"
+
+df["Grade"] = df["Marks"].apply(grade)
+
+# Create Result column
+df["Result"] = df["Marks"].apply(lambda x: "Pass" if x >= 40 else "Fail")
+
+# Create Performance Score
+df["Performance_Score"] = (
+    (df["Marks"] * 0.6) +
+    (df["Attendance"] * 0.2) +
+    (df["StudyHours"] * 2)
+)
+
+print(df.head())
