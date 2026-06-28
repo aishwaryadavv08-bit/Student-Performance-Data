@@ -23,3 +23,32 @@ print("\n MEMORY USAGE OF THE DATASET:")
 print(df.memory_usage())
 print("\n SUMMARY INFORMATION OF THE DATASET:")
 print(df.info())
+
+#module 3: Data Cleaning
+print("\n DATA CLEANING:")
+#Removing duplicate records
+df.drop_duplicates()
+
+#Handle missing data
+df["Attendance"] = df["Attendance"].fillna(df["Attendance"].mean())
+df["StudyHours"] = df["StudyHours"].fillna(df["StudyHours"].mean())
+df["Marks"] = df["Marks"].fillna(df["Marks"].mean())
+df["Name"] = df["Name"].fillna("Unknown")
+
+# Remove invalid entries (Blank Names)
+df = df[df["Name"].str.strip() != ""]
+
+# Validate Attendance (0 to 100)
+df = df[(df["Attendance"] >= 0) & (df["Attendance"] <= 100)]
+
+# Validate Study Hours (0 to 24)
+df = df[(df["StudyHours"] >= 0) & (df["StudyHours"] <= 24)]
+
+# Validate Marks (0 to 100)
+df = df[(df["Marks"] >= 0) & (df["Marks"] <= 100)]
+
+# Save the cleaned dataset
+df.to_csv("cleaned_data.csv", index=False)
+
+print("\nData cleaning completed successfully.")
+print("Cleaned dataset saved as 'cleaned_data.csv'")
