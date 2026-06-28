@@ -84,3 +84,31 @@ df["Performance_Score"] = (
 )
 
 print(df.head())
+
+# Module 5 : Data Filtering
+
+
+print("\n DATA FILTERING ")
+
+# Top-performing students (Grade A)
+topper = df[df["Grade"] == "A"]
+
+# Failed students(F grade)
+failed = df[df["Grade"] == "F"]
+
+# Students with attendance below 75%
+low_attendance = df[df["Attendance"] < 75]
+
+# Students studying more than 8 hours
+more_study = df[df["StudyHours"] > 8]
+
+# Save filtered datasets
+topper.to_csv("topper.csv", index=False)
+failed.to_csv("failed.csv", index=False)
+low_attendance.to_csv("low_attendance.csv", index=False)
+more_study.to_csv("more_than_8_hours.csv", index=False)
+
+print("Topper dataset saved as topper.csv")
+print("Failed dataset saved as failed.csv")
+print("Low attendance dataset saved as low_attendance.csv")
+print("More than 8 hours study dataset saved as more_than_8_hours.csv")
