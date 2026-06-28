@@ -112,3 +112,35 @@ print("Topper dataset saved as topper.csv")
 print("Failed dataset saved as failed.csv")
 print("Low attendance dataset saved as low_attendance.csv")
 print("More than 8 hours study dataset saved as more_than_8_hours.csv")
+
+# Module 6 : Data Analysis
+
+
+print("\n  DATA ANALYSIS= ")
+
+# Average Marks
+print("Average Marks:", df["Marks"].mean())
+
+# Highest Marks
+print("Highest Marks:", df["Marks"].max())
+
+# Lowest Marks
+print("Lowest Marks:", df["Marks"].min())
+
+# Average Attendance
+print("Average Attendance:", df["Attendance"].mean())
+
+# Average Study Hours
+print("Average Study Hours:", df["StudyHours"].mean())
+
+# Pass Percentage
+pass_percentage = (df["Result"] == "Pass").sum() / len(df) * 100
+print("Pass Percentage:", round(pass_percentage, 2), "%")
+
+# Fail Percentage
+fail_percentage = (df["Result"] == "Fail").sum() / len(df) * 100
+print("Fail Percentage:", round(fail_percentage, 2), "%")
+
+# Grade Distribution
+print("\nGrade Distribution:")
+print(df["Grade"].value_counts())
