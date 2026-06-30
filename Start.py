@@ -114,8 +114,6 @@ print("Low attendance dataset saved as low_attendance.csv")
 print("More than 8 hours study dataset saved as more_than_8_hours.csv")
 
 # Module 6 : Data Analysis
-
-
 print("\n  DATA ANALYSIS= ")
 
 # Average Marks
@@ -144,3 +142,23 @@ print("Fail Percentage:", round(fail_percentage, 2), "%")
 # Grade Distribution
 print("\nGrade Distribution:")
 print(df["Grade"].value_counts())
+
+#Module 7 : Data Sorting
+print("\n===== SORTING =====")
+
+# Sort by Marks (Highest to Lowest)
+sorted_marks = df.sort_values(by="Marks", ascending=False)
+print("\nStudents Sorted by Marks (Highest to Lowest):")
+print(sorted_marks)
+
+# Sort by Attendance (Highest to Lowest)
+sorted_attendance = df.sort_values(by="Attendance", ascending=False)
+print("\nStudents Sorted by Attendance (Highest to Lowest):")
+print(sorted_attendance)
+
+# Sort by Study Hours (Highest to Lowest)
+sorted_study_hours = df.sort_values(by="StudyHours", ascending=False)
+print("\nStudents Sorted by Study Hours (Highest to Lowest):")
+print(sorted_study_hours)
+
+print("\nSorted datasets saved successfully.")
