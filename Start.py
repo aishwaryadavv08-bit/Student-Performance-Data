@@ -294,5 +294,6 @@ plt.xlabel("Grades")
 plt.ylabel("Number of Students")
 plt.grid(axis="y")
 plt.tight_layout()
-plt.show(block=True)
+plt.show(block=True)  
+
 
