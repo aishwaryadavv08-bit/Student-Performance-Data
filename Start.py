@@ -182,3 +182,31 @@ avg_attendance_grade = df.groupby("Grade")["Attendance"].mean()
 print(avg_attendance_grade)
 print("Grouping done successfully.")
 
+
+# Module 9 : Statistical Analysis
+print("\n STATISTICAL ANALYSIS:")
+
+# Mean
+print("\nMean:")
+print(df[["Marks", "Attendance", "StudyHours"]].mean())
+
+# Median
+print("\nMedian:")
+print(df[["Marks", "Attendance", "StudyHours"]].median())
+
+# Mode
+print("\nMode:")
+print(df[["Marks", "Attendance", "StudyHours"]].mode())
+
+# Standard Deviation
+print("\nStandard Deviation:")
+print(df[["Marks", "Attendance", "StudyHours"]].std())
+
+# Variance ,It tells how spread out the values are from average.
+print("\nVariance:")
+print(df[["Marks", "Attendance", "StudyHours"]].var())
+
+# Correlation Matrix, It shows the relationship between different variables in the dataset. The values range from -1 to 1, where 1 indicates a strong positive correlation, -1 indicates a strong negative correlation, and 0 indicates no correlation.
+print("\nCorrelation Matrix:")
+print(df[["Marks", "Attendance", "StudyHours"]].corr()) 
+
