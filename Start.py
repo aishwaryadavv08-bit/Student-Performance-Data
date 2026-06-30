@@ -279,3 +279,19 @@ print("1. output/cleaned_data.csv")
 print("2. output/topper.csv")
 print("3. output/failed.csv")
 print("4. output/report.csv")
+
+
+
+print("\n DATA VISUALIZATION ")
+
+# Visualization 1: Grade Distribution
+grade_counts = df["Grade"].value_counts().sort_index()
+
+plt.figure(figsize=(6,4))
+plt.bar(grade_counts.index, grade_counts.values, color=['green', 'blue', 'orange', 'red', 'purple'])
+plt.title("Grade Distribution",fontsize=14,fontweight="bold")
+plt.xlabel("Grades")
+plt.ylabel("Number of Students")
+plt.grid(axis="y")
+plt.tight_layout()
+plt.show(block=True)
