@@ -144,7 +144,7 @@ print("\nGrade Distribution:")
 print(df["Grade"].value_counts())
 
 #Module 7 : Data Sorting
-print("\n===== SORTING =====")
+print("\n SORTING: ")
 
 # Sort by Marks (Highest to Lowest)
 sorted_marks = df.sort_values(by="Marks", ascending=False)
@@ -161,4 +161,24 @@ sorted_study_hours = df.sort_values(by="StudyHours", ascending=False)
 print("\nStudents Sorted by Study Hours (Highest to Lowest):")
 print(sorted_study_hours)
 
-print("\nSorted datasets saved successfully.")
+print("\nSorted datasets are shown in the output.")
+
+# Module 8 : Grouping
+print("\n GROUPING: ")
+
+# Average Marks by Grade
+print("\nAverage Marks by Grade:")
+avg_marks_grade = df.groupby("Grade")["Marks"].mean()
+print(avg_marks_grade)
+
+# Number of Students in Each Grade
+print("\nNumber of Students in Each Grade:")
+students_grade = df.groupby("Grade").size()
+print(students_grade)
+
+# Average Attendance by Grade
+print("\nAverage Attendance by Grade:")
+avg_attendance_grade = df.groupby("Grade")["Attendance"].mean()
+print(avg_attendance_grade)
+print("Grouping done successfully.")
+
