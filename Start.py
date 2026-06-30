@@ -257,3 +257,33 @@ report_df.to_csv("report.csv", index=False)
 
 print("\nReport generated successfully.")
 print("Report saved as 'report.csv'")
+
+# -----------------------------
+# Module 11 : Export Data
+# -----------------------------
+
+print("\n===== EXPORT DATA =====")
+
+import os
+
+
+
+# Export cleaned dataset
+df.to_csv("output/cleaned_data.csv", index=False)
+
+# Export toppers dataset
+topper.to_csv("output/topper.csv", index=False)
+
+# Export failed students dataset
+failed.to_csv("output/failed.csv", index=False)
+
+# Export report
+report_df.to_csv("output/report.csv", index=False)
+
+print("\nAll files have been exported successfully!")
+
+print("Generated Files:")
+print("1. output/cleaned_data.csv")
+print("2. output/topper.csv")
+print("3. output/failed.csv")
+print("4. output/report.csv")
