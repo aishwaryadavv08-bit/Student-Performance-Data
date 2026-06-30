@@ -210,3 +210,50 @@ print(df[["Marks", "Attendance", "StudyHours"]].var())
 print("\nCorrelation Matrix:")
 print(df[["Marks", "Attendance", "StudyHours"]].corr()) 
 
+# Module 10 : Report Generation
+print("\n REPORT GENERATION ")
+
+report = {
+    "Metric": [
+        "Total Students",
+        "Passed Students",
+        "Failed Students",
+        "Highest Marks",
+        "Lowest Marks",
+        "Average Marks",
+        "Average Attendance"
+    ],
+    "Value": [
+        len(df),
+        (df["Result"] == "Pass").sum(),
+        (df["Result"] == "Fail").sum(),
+        df["Marks"].max(),
+        df["Marks"].min(),
+        round(df["Marks"].mean(), 2),
+        round(df["Attendance"].mean(), 2)
+    ]
+}
+
+# Grade-wise Distribution (Always show A, B, C, D, F)
+grade_distribution = df["Grade"].value_counts().reindex(
+    ["A", "B", "C", "D", "F"],
+    fill_value=0
+)
+
+# Add grade distribution to report
+for grade, count in grade_distribution.items():
+    report["Metric"].append(f"Grade {grade}")
+    report["Value"].append(count)
+
+# Convert dictionary to DataFrame
+report_df = pd.DataFrame(report)
+
+# Display report
+print("\nFinal Report:")
+print(report_df)
+
+# Save report as CSV
+report_df.to_csv("report.csv", index=False)
+
+print("\nReport generated successfully.")
+print("Report saved as 'report.csv'")
