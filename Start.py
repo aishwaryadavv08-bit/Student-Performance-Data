@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-#module 1: Data Loading
+#Module 1: Data Loading
 df=pd.read_csv("student_analysis_v2.csv")
 print("First 5 records of the dataset:")
 print(df.head(5))
@@ -12,7 +12,7 @@ print("\nShape of the dataset:", df.shape)
 print("\nColumns in the dataset:")
 print(df.dtypes)
 
-#module 2: Data Inspection
+#Module 2: Data Inspection
 print("\n MISSING VALUES IN THE DATASET:")
 print(df.isnull().sum())
 print("\n DUPLICATE RECORDS IN THE DATASET:")
@@ -24,7 +24,7 @@ print(df.memory_usage())
 print("\n SUMMARY INFORMATION OF THE DATASET:")
 print(df.info())
 
-#module 3: Data Cleaning
+#Module 3: Data Cleaning
 print("\n DATA CLEANING:")
 #Removing duplicate records
 df.drop_duplicates()
@@ -86,8 +86,6 @@ df["Performance_Score"] = (
 print(df.head())
 
 # Module 5 : Data Filtering
-
-
 print("\n DATA FILTERING ")
 
 # Top-performing students (Grade A)
@@ -258,16 +256,10 @@ report_df.to_csv("report.csv", index=False)
 print("\nReport generated successfully.")
 print("Report saved as 'report.csv'")
 
-# -----------------------------
 # Module 11 : Export Data
-# -----------------------------
+print("\n EXPORT DATA TO CSV FILES ")
 
-print("\n===== EXPORT DATA =====")
-
-import os
-
-
-
+import os      #It let your program interact with the files and folder present in your computer. 
 # Export cleaned dataset
 df.to_csv("output/cleaned_data.csv", index=False)
 
