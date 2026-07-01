@@ -303,7 +303,8 @@ plt.tight_layout()
 plt.savefig("output/grade_distribution.png")
 plt.show(block=True) 
 plt.close()
-
+ 
+#visual 2nd added
 plt.figure(figsize=(8, 5))
 plt.scatter(df["Attendance"], df["Marks"], alpha=0.4, color="darkorange")
 plt.title("Attendance vs Marks")
