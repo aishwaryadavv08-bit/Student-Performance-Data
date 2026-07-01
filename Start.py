@@ -2,8 +2,11 @@ import numpy as np
 import pandas as pd
 import matplotlib
 matplotlib.use('Agg')
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 import seaborn as sns
+
+
 #Module 1: Data Loading
 df=pd.read_csv("student_analysis_v2.csv")
 print("First 5 records of the dataset:")
@@ -287,6 +290,7 @@ print("4. output/report.csv")
 print("\n DATA VISUALIZATION ")
 
 # Visualization 12: Grade Distribution
+#GRADE DISTRIBUTION BAR CHART
 grade_counts = df["Grade"].value_counts().sort_index()
 
 plt.figure(figsize=(6,4))
@@ -299,5 +303,18 @@ plt.tight_layout()
 plt.savefig("output/grade_distribution.png")
 plt.show(block=True) 
 plt.close()
+
+plt.figure(figsize=(8, 5))
+plt.scatter(df["Attendance"], df["Marks"], alpha=0.4, color="darkorange")
+plt.title("Attendance vs Marks")
+plt.xlabel("Attendance (%)")
+plt.ylabel("Marks")
+print(" Saved chart_attendance_vs_marks.png")
+plt.savefig("output/chart_attendance_vs_marks.png")
+plt.show(block=True)
+plt.close()
+
+
+ 
 
 
