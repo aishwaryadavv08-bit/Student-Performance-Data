@@ -1,5 +1,7 @@
 import numpy as np
 import pandas as pd
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import seaborn as sns
 #Module 1: Data Loading
@@ -284,7 +286,7 @@ print("4. output/report.csv")
 
 print("\n DATA VISUALIZATION ")
 
-# Visualization 1: Grade Distribution
+# Visualization 12: Grade Distribution
 grade_counts = df["Grade"].value_counts().sort_index()
 
 plt.figure(figsize=(6,4))
@@ -294,6 +296,8 @@ plt.xlabel("Grades")
 plt.ylabel("Number of Students")
 plt.grid(axis="y")
 plt.tight_layout()
-plt.show(block=True)  
+plt.savefig("output/grade_distribution.png")
+plt.show(block=True) 
+plt.close()
 
 
