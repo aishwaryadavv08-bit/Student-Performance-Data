@@ -289,8 +289,7 @@ print("4. output/report.csv")
 
 print("\n DATA VISUALIZATION ")
 
-# Visualization 12: Grade Distribution
-#GRADE DISTRIBUTION BAR CHART
+# Visualization 12 using matplotlib
 grade_counts = df["Grade"].value_counts().sort_index()
 
 plt.figure(figsize=(6,4))
@@ -304,7 +303,7 @@ plt.savefig("output/grade_distribution.png")
 plt.show(block=True) 
 plt.close()
  
-#visual 2nd added
+#visuals Added
 plt.figure(figsize=(8, 5))
 plt.scatter(df["Attendance"], df["Marks"], alpha=0.4, color="darkorange")
 plt.title("Attendance vs Marks")
@@ -314,6 +313,18 @@ print(" Saved chart_attendance_vs_marks.png")
 plt.savefig("output/chart_attendance_vs_marks.png")
 plt.show(block=True)
 plt.close()
+
+# Top 10 Students 
+
+print("\n===== NOW SHOWING TOP 10 STUDENTS =====")
+
+top10 = df.sort_values(
+    by="Performance_Score",
+    ascending=False
+).head(10)
+
+print(top10)
+
 
 
  
