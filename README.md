@@ -1,7 +1,6 @@
-NAME:- Aishwarya YADAV
-COURSE:- B.TECH - CSE (AI)
-ROLL NO:- 2400461520006
-
+NAME:- Aishwarya YADAV 
+<br>COURSE:- B.TECH - CSE (AI)</br>
+<br> ROLL NO:- 2400461520006 </br>
 BASIC INTRODUCTION OF THIS PROJECT:- Student Performance Data Handling and Analysis System
 
 This project is a Python-based application designed to analyze and manage student performance data using CSV files. It uses the NumPy, Pandas, Matplotlib, and Seaborn libraries to perform data loading, inspection, cleaning, transformation, analysis, report generation, and data visualization.
